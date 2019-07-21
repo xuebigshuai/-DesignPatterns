@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #demo {
+        width: 900px;
+        height: 600px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #ccc;
+    }
+
+    #demo div {
+        height: 900px;
+        width: 1000px;
+        background: red;
+    }
+</style>
+
+<body>
+    <div id="demo">
+        <div>
+            ddddd
+        </div>
+    </div>
+    <p id='test'>
+
+    </p>
+    <script>
+        var A = function (selector) {
+            return new A.fn.init(selector);
+        }
+        A.fn = A.prototype = {
+            init: function (selector) {
+                this[0] = document.getElementById(selector)
+                this.length = 1;
+                return this
+            },
+            length: 1,
+            size() {
+                return this.length;
+            }
+        }
+        var demo = A('demo');
+        var test = A('test');
+        console.log(demo)
+        console.log(test)
+    </script>
+</body>
+
+</html>
